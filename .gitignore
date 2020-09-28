@@ -1,0 +1,7 @@
+target/
+*.sw[op]
+.DS_Store
+.metals
+.bloop
+secret
+metals.sbt
