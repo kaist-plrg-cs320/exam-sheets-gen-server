@@ -13,7 +13,7 @@ object Main {
 
   val year = 2020
   val semester = "Fall"
-  val qnum = 9
+  val qnum = 10
 
   def main(args: Array[String]): Unit = run(
     args match {
@@ -33,9 +33,9 @@ object Main {
   def getSheet(id: String, aes: AES256): Array[Byte] = {
     val sheet = new ExamSheet(id, aes)
     for (i <- 1 to qnum)
-      sheet.addPage(i, year, semester, "Midterm")
-    for (i <- 1 to qnum)
-      sheet.addPage(i, year, semester, "Final")
+      sheet.addPage(i.toString, year, semester, "Final")
+    for (i <- 1 to 3)
+      sheet.addPage(s"extra$i", year, semester, "Final")
     val arr = sheet.toByteArray
     sheet.close()
     arr

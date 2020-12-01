@@ -16,7 +16,7 @@ class ExamSheet(id: String, aes: AES256) {
   info.setTitle(id)
 
   def addPage(
-    questionNo: Int,
+    questionNo: String,
     year: Int,
     semester: String,
     exam: String
